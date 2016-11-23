@@ -8,17 +8,18 @@ body {
 /***************************
  BACKGROUND FOR ALL PAGES */
  .view-content {
-	background:url('../images/weather.jpg');
+	//background:url('../images/weather.jpg');
  }
 /**************************
  STYLE FOR HOME STATE */
 .home-content{
 	height:450px;
+	background:url('../images/weather.jpg');
 }
 /**************************
  STYLE FOR DAILY STATE */
 .daily-content {
-	background-color: rgba(0,0,0,0.4);
+	//background-color: rgba(0,0,0,0.4);
 }
 .daily-content, .hourly-content {
 	border-left: 1px solid black;
@@ -32,7 +33,7 @@ body {
 .astronomy {
 	border-right: 1px solid black;
 }
-div.well.row {
+div.row.well {
 	margin: 45px 0 0 -10px;
 	padding: 5px;
 	background-color: rgba(255,255,255,0.3);
@@ -46,13 +47,11 @@ div.well.row {
 	font-size:2em;
 	font-weight: bold;
 }
-.today-date .panel-footer, .repeatedDays .panel-footer, .repeatedHours.panel-footer {
+.today-date .panel-footer, .repeatedDays .panel-footer, .repeatedHours .panel-footer {
 	color: black;
-	background-color: rgba(255,255,255,0.4);
+	background-color: #668EA9;
 }
 .today-row {
-	//border: 1px solid black;
-	//background-color: rgba(0,0,0, 0.4);
 }
 .icon-column {
 	padding-bottom: 100px;
@@ -63,8 +62,7 @@ div.well.row {
 	
 }
 .repeatedDays {
-	border: 1px solid black;
-	//background-color: rgba(0,0,0, 0.4);
+	//border: 1px solid black;
 }
 .following-days-summary {
 	height: 100px;
@@ -72,12 +70,12 @@ div.well.row {
 /**************************
  STYLE FOR HOURLY STATE */
 .hourly-content {
-	background-color: rgba(0,0,0, 0.4);
 }
 .repeatedHours {
 	border: 1px solid black;
-	//background-color: rgba(0,0,0,0.4);
-
+}
+div.repeatedHours div.row div.panel div.panel-heading {
+	font-size: 1.5em;
 }
 form select{
 	background-color: salmon;
