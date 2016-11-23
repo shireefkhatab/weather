@@ -47,7 +47,7 @@ div.row.well {
 	font-size:2em;
 	font-weight: bold;
 }
-.today-date .panel-footer, .repeatedDays .panel-footer, .repeatedHours .panel-footer {
+.today-date .panel-footer, .repeated-days .panel-footer, .repeated-hours .panel-footer {
 	color: black;
 	background-color: #668EA9;
 }
@@ -61,8 +61,16 @@ div.row.well {
 	margin:40px 0;
 	
 }
-.repeatedDays {
-	//border: 1px solid black;
+div.daily .repeated-days-icon {
+	margin: 10px 0;
+}
+.repeated-days-figure {
+	margin: 10px 20px;
+}
+.repeated-days {
+	border: 1px solid black;
+	margin: 0;
+	padding: 0;
 }
 .following-days-summary {
 	height: 100px;
@@ -71,10 +79,10 @@ div.row.well {
  STYLE FOR HOURLY STATE */
 .hourly-content {
 }
-.repeatedHours {
+.repeated-hours {
 	border: 1px solid black;
 }
-div.repeatedHours div.row div.panel div.panel-heading {
+div.repeated-hours div.row div.panel div.panel-heading {
 	font-size: 1.5em;
 }
 form select{
