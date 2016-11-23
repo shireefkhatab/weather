@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weatherApp">
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather app</title>
+	<!-- <base href="/" /> -->
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">AngularJs Weather App</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="home"><i class="fa fa-home"></i>Home</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid view-content">
+    <div ui-view></div>
+</div>
+
+
+      <script src="lib/jquery.min.js"></script>
+      <script src="lib/bootstrap.min.js"></script>
+
+    <!-- lib -->
+      <script src="lib/angular.min.js"></script>
+      <script src="lib/angular-route.min.js"></script>
+      <script src="lib/angular-ui-router.min.js"></script>
+      <script src="lib/jquery.min.js"></script>
+
+    <!-- modules -->
+          <script src="src/app.module.js"></script>
+    <!-- routes -->
+          <script src="src/app.routes.js"></script>
+    <!-- services -->
+           <script src="src/services/location.service.js"></script>
+           <script src="src/services/daily.service.js"></script>
+           <script src="src/services/hourly.service.js"></script>
+           <script src="src/services/spinner.service.js"></script>
+     <!-- controllers -->
+          <script src="src/home/home.controller.js"></script>
+          <!-- <script src="src/forecast/forecast.controller.js"></script> -->
+          <script src="src/daily/daily.controller.js"></script>
+          <script src="src/components/daily.component.js"></script>
+
+          <script src="src/hourly/hourly.controller.js"></script>
+          <script src="src/components/hourly.component.js"></script>
+
+  </body>
+</html>

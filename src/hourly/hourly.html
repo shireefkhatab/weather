@@ -1,0 +1,43 @@
+<div class="container-fluid hourly-content">
+	 <div class="row">
+	    <div class="col-sm-6">
+			<div>
+				<p><!-- <button class="btn btn-success btn-md back" ui-sref="home">Back</button> -->
+				{{HCtrl.location.city.name}}, {{HCtrl.location.country.name}}
+				</p>
+				<button class="btn btn-success btn-md daily-button" ui-sref="daily" ng-click="HCtrl.loading()">
+				Daily <img ng-if="HCtrl.showSpinner" ng-src="images/spinner1.gif" alt="loading spinner" width="20">
+				</button>
+				<button class="btn btn-success btn-md hourly-button" ui-sref="hourly">Hourly</button>
+			</div>
+		</div>
+		<div class="col-sm-6">
+		    <form class="form-horizontal pull-right" role="form" name="unitsForm">
+	        <div class="form-group">
+	          <br>
+	          <div class="col-sm-12 select">
+	            <label for="unitSelect"><strong>Change unit:</strong></label>
+
+	            <select name="unitSelect" id="unitSelect" class="c-select" 
+	            ng-options="unit for unit in HCtrl.units track by unit" 
+	            title="units" ng-model="HCtrl.selectedUnit">
+	            </select>
+	          </div>
+	        </div>
+	      </form> 
+		</div>
+	</div>
+	<hr>
+
+	<p ng-if="HCtrl.showError"> SORRY TRY AGAIN! <br>
+there was an error processing your request, plese try again! </p>
+	<hourly-component  
+		hourly-info="HCtrl.hourlyInfo"
+		location-info="HCtrl.locationInfo"
+		selected-unit="HCtrl.selectedUnit"
+	>
+	</hourly-component>
+	
+</div> <!-- end of container-fluid -->
+
+<!--  -->

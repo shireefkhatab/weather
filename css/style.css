@@ -1,0 +1,135 @@
+body {
+	box-sizing: border-box;
+	color: white;
+	font-weight: bold;
+	font-family: "verb","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+	background-color: #004370;	
+}
+/***************************
+ BACKGROUND FOR ALL PAGES */
+ .view-content {
+	background:url('../images/weather.jpg');
+ }
+/**************************
+ STYLE FOR HOME STATE */
+.home-content{
+	height:450px;
+}
+/**************************
+ STYLE FOR DAILY STATE */
+.daily-content {
+	background-color: rgba(0,0,0,0.4);
+}
+.daily-content, .hourly-content {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 20px;
+}
+.history, .astronomy {
+	font-size: .75em;
+	color: black;
+}
+.astronomy {
+	border-right: 1px solid black;
+}
+div.well.row {
+	margin: 45px 0 0 -10px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.3);
+}
+.history-header, .astronomy-header{
+	text-decoration: underline;
+	color: black;
+	font-weight: bold;
+}
+.today-date {
+	font-size:2em;
+	font-weight: bold;
+}
+.today-date .panel-footer, .repeatedDays .panel-footer, .repeatedHours.panel-footer {
+	color: black;
+	background-color: rgba(255,255,255,0.4);
+}
+.today-row {
+	//border: 1px solid black;
+	//background-color: rgba(0,0,0, 0.4);
+}
+.icon-column {
+	padding-bottom: 100px;
+	padding-right: 20px;
+}
+.icon {
+	margin:40px 0;
+	
+}
+.repeatedDays {
+	border: 1px solid black;
+	//background-color: rgba(0,0,0, 0.4);
+}
+.following-days-summary {
+	height: 100px;
+}
+/**************************
+ STYLE FOR HOURLY STATE */
+.hourly-content {
+	background-color: rgba(0,0,0, 0.4);
+}
+.repeatedHours {
+	border: 1px solid black;
+	//background-color: rgba(0,0,0,0.4);
+
+}
+form select{
+	background-color: salmon;
+	padding: 5px;
+	width: 100px;
+	font-style: italic;
+	border-radius: 20%;
+}
+div.select {
+	background-color: lightgray;
+	color: black;
+	border-radius: 10%;
+}
+
+/***********************************
+ ROW TO DISPLAY THE TILTLE: TODAY */
+
+.today-temp {
+	margin: 20px 10px 0 5px;
+	padding: 4px;
+
+}
+.today-conditions {
+	margin: 20px 10px;
+	font-size: 1.5em;
+}
+ .today-precip, .today-humidity, .today-wind {
+	margin-top: 20px;
+}
+.max-temp-text, .min-temp-text, .precip-text, .wind-text, .humidity-text {
+	padding: 2px;
+	border-radius: 10%;
+}
+.max-temp-text {
+	background-color: red;
+}
+.min-temp-text {
+	background-color: blue;
+}
+.wind-text {
+	background-color: rgba(0,0,0,0.7);
+	height: 25px;
+}
+.precip-text {
+	background-color: rgba(150,0,250,0.6);
+}
+.humidity-text {
+	background-color: rgba(100,255,255,0.6);
+}
+.today-summary {
+	font-weight: bold;
+}
+
+/********************************************
+ROW TO DISPLAY FORECAST FOR FOLLOWING DAYS */

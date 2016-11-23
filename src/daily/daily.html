@@ -1,0 +1,51 @@
+<div class="container-fluid daily-content">
+
+  <div class="row">
+    <div class="col-sm-6">
+        <p class="head">
+        {{DCtrl.location.city.name}}, {{DCtrl.location.country.name}}
+        </p>
+        <button class="btn btn-success btn-md daily-button" ui-sref="daily">Daily</button>
+        <button class="btn btn-success btn-md hourly-button" ui-sref="hourly" ng-click="DCtrl.loading()">
+        Hourly <img ng-if="DCtrl.showSpinner" ng-src="images/spinner1.gif" alt="loading spinner" width="20">
+         </button>
+     </div>
+    
+    <div class="col-sm-6">
+      <form class="form-horizontal pull-right" role="form" name="unitsForm">
+        <div class="form-group">
+            <br>
+            <div class="col-sm-12 select">
+            <label for="unitSelect"><strong> Change unit </strong></label>
+            <select name="unitSelect" id="unitSelect" class="c-select" 
+            ng-options="unit for unit in DCtrl.units track by unit"
+            title="units" 
+            ng-model="DCtrl.selectedUnit">
+            </select>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+    <hr>  
+
+
+
+<p ng-if="DCtrl.showError"> SORRY TRY AGAIN! <br>
+there was an error processing your request, plese try again! </p>
+<daily-component 
+  today-text="DCtrl.todayText" 
+  today-info="DCtrl.todayInfo" 
+  following-days-text="DCtrl.followingDaysText" 
+  following-days-info="DCtrl.followingDaysInfo" 
+  sunrise="DCtrl.sunrise" 
+  sunset="DCtrl.sunset" 
+  moonrise="DCtrl.moonrise" 
+  moonset="DCtrl.moonset"
+  highiest="DCtrl.highiest" 
+  lowest="DCtrl.lowest" 
+  selected-unit="DCtrl.selectedUnit">
+</daily-component>
+
+</div>
+<!-- end ofcontainer-fluid -->

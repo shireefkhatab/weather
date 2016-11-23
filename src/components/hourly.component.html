@@ -1,0 +1,60 @@
+
+
+	<div class="row">
+	
+		<div class="col-sm-4 col-md-3 col-lg-2 repeatedHours" ng-repeat="info in $ctrl.hourlyInfo">
+			<div class="row">
+				<!-- <div class="col-sm-12"> -->
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							{{info.FCTTIME.civil}} {{$ctrl.locationInfo.tz_short}}<br>
+							{{info.FCTTIME.weekday_name_abbrev}}  
+			       			{{info.FCTTIME.mday}} {{info.FCTTIME.mon_abbrev}}
+						</div>
+					</div>
+				<!-- </div> -->
+			</div>
+	        
+			<div class="row">
+			<div class="col-sm-12">
+		        <table>
+		          <tr>
+		            <td>
+		              <img class="media-object img-responsive" ng-src="{{info.icon_url}}" alt="weather forecast for {{HCtrl.location.country.name}}" width="50">
+		            </td>
+		           </tr>
+		          <tr>
+		            <td colspan="2">{{info.condition}} </td>
+		          </tr>
+		           <tr>
+		            <!-- Metric || Hybrid -->
+		            <td colspan="2" ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit ==='Hybrid'">
+		              <span class=" max-temp-text pull-left">{{info.temp.metric}} °C </span> <span class=""> &nbsp; Feels like &nbsp; </span>
+		              <span class=" min-temp-text pull-right"> {{ info.feelslike.metric}} °C</span>
+		            </td>
+					<!-- Imperial -->
+		            <td colspan="2" ng-if="$ctrl.selectedUnit ==='Imperial'">
+		              <span class="max-temp-text pull-left">{{info.temp.english}} °F</span> <span class=""> &nbsp; Feels like &nbsp;  </span>
+		              <span class="min-temp-text pull-right"> {{ info.feelslike.english}} °F</span>
+		            </td>
+		          </tr>
+		          <tr>
+		            <td><img class="img-responsive" src="images/wind.png" alt="wind" width="40"> </td>
+		            <!-- Metric -->
+		            <td ng-if="$ctrl.selectedUnit ==='Metric'"> &nbsp;  {{info.wdir.degrees}} {{info.wdir.dir}} / {{info.wspd.metric}} kph</td>
+					<!-- Imperial || Hybrid -->
+		            <td ng-if="$ctrl.selectedUnit ==='Imperial' || $ctrl.selectedUnit ==='Hybrid'"> &nbsp;  {{info.wdir.degrees}} {{info.wdir.dir}} / {{info.wspd.english}} mph</td>
+		          </tr>
+		          <tr>
+		            <td> <img class="img-responsive" src="images/precip.png" alt="precip" width="40"> </td>
+		            <td> {{info.pop}}%</td>
+		          </tr>
+		          <tr>
+		            <td><img class="img-responsive" src="images/humidity.png" alt="humidity" width="40"> </td>
+		            <td> {{info.humidity}}% </td> 
+		          </tr>
+		        </table>
+		       </div>
+	       </div><!-- end of 2nd row -->
+        </div>  
+ 	</div>  <!-- end of main row -->

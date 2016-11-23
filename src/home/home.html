@@ -1,0 +1,31 @@
+
+<div class="row home-content">
+    <div class="col-md-6 col-md-offset-3">
+        <br />
+		<h3>Weather Forecast:</h3>
+        <h4>Your location:</h4>
+        <form action="" class="form-horizontal">
+            <div class="form-group">
+                <label for="country" class="control-label col-sm-2"> Country</label>
+                <div class="col-sm-10">
+                     <input class ="form-control" placeholder="Enter Your Country" ng-model="HomeCtrl.location.country.name">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="city" class="control-label col-sm-2"> City</label>
+                <div class="col-sm-10">
+                    <input class ="form-control" placeholder="Enter Your City" ng-model="HomeCtrl.location.city.name">
+                </div>
+            </div>
+             
+            <div class="form-group col-sm-12">
+              <br>  <a class="btn btn-primary" ui-sref="daily" ng-click="HomeCtrl.loading()">
+              Get Weather <img ng-if="HomeCtrl.showSpinner" ng-src="images/spinner1.gif" alt="loading spinner" width="20">
+              </a> <hr />
+            </div>
+        </form>
+       
+    </div>
+
+</div>

@@ -1,0 +1,181 @@
+
+
+  <div class="row today-date">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{$ctrl.todayInfo[0].date.weekday_short}}, {{$ctrl.todayInfo[0].date.day}} {{$ctrl.todayInfo[0].date.monthname_short}} {{$ctrl.todayInfo[0].date.year}}
+      </div>
+      <div class="col-sm-12 panel-footer">
+      <!-- Metric || Hybrid-->
+        <p class="lead today-summary" ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit==='Hybrid'">{{$ctrl.todayText[0].fcttext_metric}}</p>
+      <!-- Imperial -->
+        <p class="lead today-summary" ng-if="$ctrl.selectedUnit ==='Imperial'">{{$ctrl.todayText[0].fcttext}}</p>
+      </div>
+    </div>
+  </div>
+ <div class="row today-row">
+  <div class="col-sm-2 icon-column">
+    <div class="icon"><img class="img-responsive" ng-src="{{$ctrl.todayInfo[0].icon_url}}" alt="weather icon" width="140"></div>
+    <div class="today-conditions"> {{$ctrl.todayInfo[0].conditions}} </div>
+  </div>
+	<div class="col-sm-10">
+	<div class="row">
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 today-temp max-temp-img"><img class="img-responsive" src="images/max-min.png" alt="max temp" width="60"> </div>
+      </div>
+      
+<!-- Metric || Hybrid-->
+      <div class="row" ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit==='Hybrid'">
+        <div class="col-xs-1 col-sm-3 col-lg-2 text-center today-temp max-temp-text">{{$ctrl.todayInfo[0].high.celsius}} °C</div>
+        <div class="col-xs-1 col-sm-3 col-lg-2 text-center today-temp min-temp-text">{{$ctrl.todayInfo[0].low.celsius}} °C</div>
+      </div>
+
+<!-- Imperial -->
+      <div class="row" ng-if="$ctrl.selectedUnit ==='Imperial'">
+        <div class="col-xs-1 col-sm-3 col-lg-2 text-center today-temp max-temp-text">{{$ctrl.todayInfo[0].high.fahrenheit}} °F</div>
+        <div class="col-xs-1 col-sm-3 col-lg-2 text-center today-temp min-temp-text">{{$ctrl.todayInfo[0].low.fahrenheit}} °F</div>
+      </div>
+    </div> <span class="visible-xs"> <hr> </span>
+
+    <div class="col-sm-4">
+		<div class="row">
+			<div class="col-sm-12 today-wind wind-img"><img class="img-responsive" src="images/wind.png" alt="wind" width="50"></div>
+			<div class="col-xs-3 col-sm-6 col-lg-4 text-center today-wind wind-text">
+			<!-- Metric -->
+			<p ng-if="$ctrl.selectedUnit ==='Metric'"> {{$ctrl.todayInfo[0].avewind.dir}} / {{$ctrl.todayInfo[0].avewind.kph}} kph </p>
+			<!-- hybrid || Imperial-->
+			<p ng-if="$ctrl.selectedUnit === 'Hybrid' || $ctrl.selectedUnit ==='Imperial'"> {{$ctrl.todayInfo[0].avewind.dir}} / {{$ctrl.todayInfo[0].avewind.mph}} mph </p>
+			</div> 
+		</div>
+    </div> <span class="visible-xs"> <hr> </span>
+	
+    <div class="col-sm-2">
+    <div class="row">
+      <div class="col-sm-12 today-precip precip-img"><img class="img-responsive" src="images/precip.png" alt="precip" width="50"></div>
+      <div class="col-xs-2 col-sm-6 col-lg-4 text-center today-precip precip-text">{{$ctrl.todayInfo[0].pop}}%</div>
+    </div>
+  </div> <span class="visible-xs"> <hr> </span> 
+
+    <div class="col-sm-2">
+		<div class="row">
+			<div class="col-sm-12 today-humidity humidity-img"><img class="img-responsive" src="images/humidity.png" alt="humidity" width="50"></div>
+			<div class="col-xs-2 col-sm-6 col-lg-4 text-center today-humidity humidity-text">{{$ctrl.todayInfo[0].avehumidity}}%</div>
+		</div><span class="visible-xs"> <hr> </span>
+	</div> 
+	</div>
+	
+	<div class="row well">
+    <div class="col-sm-6 astronomy"><span class="visible-sm visible-md visible-lg visible-xl"> <hr> </span>
+      <h4 class="astronomy-header">Astronomy</h4>
+      <div class="row"> 
+        <div class="col-sm-3 sunrise sunrise-img"><img src="images/sunrise.png" alt="sunrise" width="30"></div>
+        <div class="col-sm-3 sunrise sunrise-text">{{$ctrl.sunrise.hour}}: {{$ctrl.sunrise.minute}}</div>
+      
+        <div class="col-sm-3 sunset sunset-img"><img src="images/sunset.png" alt="sunset" width="30"></div>
+        <div class="col-sm-3 sunset sunset-text">{{$ctrl.sunset.hour}}: {{$ctrl.sunset.minute}}</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 moonrise moonrise-img"><img src="images/moonrise.png" alt="moonrise" width="30"></div>
+        <div class="col-sm-3 moonrise moonrise-text">{{$ctrl.moonrise.hour}}: {{$ctrl.moonrise.minute}}</div>
+      
+        <div class="col-sm-3 moonset moonset-img"><img src="images/moonset.png" alt="moonset" width="30"></div>
+        <div class="col-sm-3 moonset moonset-text">{{$ctrl.moonset.hour}}: {{$ctrl.moonset.minute}}</div>
+      </div>
+    </div>  <span class="visible-xs"> <hr> </span>
+
+    <div class="col-sm-6 history"> <span class="visible-sm visible-md visible-lg visible-xl"> <hr> </span>
+       <h4 class="history-header">History of the day</h4> 
+      <div class="row">
+        <div class="col-sm-3"> Highiest: </div>
+        <!-- Metric || Hybrid -->
+        <div> <span class="col-sm-3 col-md-2 text-center max-temp-text" ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit==='Hybrid'">{{$ctrl.highiest.record.C}} °C </span> </div>
+        <!-- Imperial -->
+        <div> <span class="col-sm-3 col-md-2 text-center" ng-if="$ctrl.selectedUnit ==='Imperial'">{{$ctrl.highiest.record.F}} °F </span> </div>
+      
+        <div class="col-sm-3"> Recorded: </div>
+        <div class="col-sm-3">{{$ctrl.highiest.recordyear}}</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"> Lowest: </div>
+        <!-- Metric || Hybrid -->
+        <div> <span class="col-sm-3 col-md-2 text-center min-temp-text" ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit==='Hybrid'">{{$ctrl.lowest.record.C}} °C </span> </div>
+        <!-- Imperial -->
+        <div> <span class="col-sm-3 col-md-2 text-center" ng-if="$ctrl.selectedUnit ==='Imperial'">{{$ctrl.lowest.record.F}} °F </span> </div>
+        
+        <div class="col-sm-3"> Recorded: </div>
+        <div class="col-sm-3">{{$ctrl.highiest.recordyear}}</div>
+      </div>
+    </div> 
+  </div>
+  </div>
+  </div>
+  <!-- end of .today-row -->
+  
+
+  <div class="row"> <hr>
+    <div class="col-sm-4 repeatedDays" ng-repeat="info in $ctrl.followingDaysInfo">
+    
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              {{info.date.weekday_short}}, {{info.date.day}} {{info.date.monthname_short}} {{info.date.year}}
+            </div>
+            <div class="col-sm-12 panel-footer following-days-summary">
+            <!-- Metric || Hybrid -->
+              <p class="text-center" ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit==='Hybrid'"> {{$ctrl.followingDaysText[$index].fcttext_metric}} </p>
+            <!-- Imperial -->
+               <p class="text-center" ng-if="$ctrl.selectedUnit ==='Imperial'"> {{$ctrl.followingDaysText[$index].fcttext}} </p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+        
+                <img class="media-object img-responsive" ng-src="{{info.icon_url}}" alt="weather forecast for {{ForecastCtrl.location.country.name}}" width="40">
+                 <span class="text-center">{{info.conditions}} </span> 
+        </div>
+        <div class="col-sm-12">
+              <!-- Metric || Hybrid -->
+              <p ng-if="$ctrl.selectedUnit ==='Metric' || $ctrl.selectedUnit==='Hybrid'">
+                <span class="text-center max-temp-text">{{info.high.celsius }} °C</span> &nbsp;&nbsp;
+                <span class="text-center min-temp-text"> {{ info.low.celsius}} °C</span>
+              </p>
+              <!-- Imperial -->
+              <p ng-if="$ctrl.selectedUnit ==='Imperial'">
+                <span class="text-center max-temp-text">{{info.high.celsius }} °F</span> &nbsp;&nbsp;
+                <span class="text-center min-temp-text"> {{ info.low.celsius}} °F</span>
+              </p>
+
+        </div>
+        <div class="col-sm-6"> 
+              <span><img class="img-responsive" src="images/wind.png" alt="wind" width="30"> </span>
+              <!-- Metric -->
+
+              <p class="text-center wind-text" ng-if="$ctrl.selectedUnit ==='Metric'"> 
+                  {{info.avewind.dir}} / {{info.avewind.kph}} kph</p>
+              <!-- Hybrid || Imperial -->
+              <p class="text-center wind-text" ng-if="$ctrl.selectedUnit === 'Hybrid' || $ctrl.selectedUnit ==='Imperial'">
+                  {{info.avewind.dir}} / {{info.avewind.mph}} mph</p>
+        </div>
+        <div class="col-sm-12">
+              <span> <img class="img-responsive" src="images/precip.png" alt="precip" width="30"> </span>
+              <span class="text-center precip-text"> {{info.pop}}%</span>
+
+              <span><img class="img-responsive" src="images/humidity.png" alt="humidity" width="30"> </span>
+              <span class="text-center humidity-text"> {{info.avehumidity}}%</span>
+        </div>
+    </div>
+      <!-- end of  row -->
+        
+      </div>
+      <!-- end of 4th row -->
+      <hr>
+    </div>
+   
+  <!-- end of main row -->
