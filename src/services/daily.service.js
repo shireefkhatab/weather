@@ -10,7 +10,7 @@
 	    this.getDailyForecast = function(country, city){
 		   	return $http({
 			   	method: 'GET',
-			   	url: 'https://api.wunderground.com/api/67162b7ee685fb63/geolookup/astronomy/almanac/forecast/q/' + country +'/' + city + '.json',
+			   	url: 'https://api.wunderground.com/api/1141ccf047d614284a0674902bc3c89f/geolookup/astronomy/almanac/forecast/q/' + country +'/' + city + '.json',
 			   	dataType : "jsonp",
 		  	})
 	    };
