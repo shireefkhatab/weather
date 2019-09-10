@@ -10,7 +10,7 @@
 	    this.getDailyForecast = function(country, city){
 		   	return $http({
 			   	method: 'GET',
-			   	url: 'https://api.wunderground.com/api/67162b7ee685fb63/geolookup/daily' + country +'/' + city + '.json',
+			   	url: 'https://api.wunderground.com/api/67162b7ee685fb63/geolookup/daily/' + country +'/' + city + '.json',
 			   	dataType : "jsonp",
 		  	})
 	    };
